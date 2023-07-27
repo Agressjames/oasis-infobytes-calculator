@@ -1,0 +1,145 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator {
+    background-color: #121212;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width: 280px;
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    animation: fade-in 0.6s ease;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.display {
+    background-color: #212121;
+    color: #fff;
+    font-size: 36px;
+    text-align: right;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+button {
+    background-color: #282828;
+    color: #fff;
+    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #444;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button.operator,
+button.number {
+    grid-column: span 1;
+}
+
+button#clear,
+button#backspace {
+    grid-column: span 2;
+}
+
+button.equals,
+button.zero {
+    grid-column: span 2;
+}
+
+button#divide,
+button#multiply,
+button#subtract,
+button#add,
+button#decimal {
+    grid-column: span 1;
+}
+
+/* Additional CSS for special buttons */
+button#clear {
+    background-color: #f44336;
+}
+
+button#clear:hover {
+    background-color: #d32f2f;
+}
+
+button#backspace {
+    background-color: #546e7a;
+}
+
+button#backspace:hover {
+    background-color: #455a64;
+}
+
+button.equals {
+    background-color: #64b5f6;
+}
+
+button.equals:hover {
+    background-color: #42a5f5;
+}
+
+button.zero {
+    background-color: #282828;
+}
+
+button#decimal {
+    background-color: #282828;
+}
+
+button.operator,
+button.number {
+    transform-origin: 50% 50%;
+    animation: scale-in 0.2s cubic-bezier(0.17, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes scale-in {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
